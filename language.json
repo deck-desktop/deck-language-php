@@ -1,0 +1,11 @@
+{
+  "languageId": "php",
+  "extensions": ["php", "phtml"],
+  "serverId": "intelephense",
+  "server": {
+    "strategy": "node-module",
+    "module": "intelephense",
+    "args": ["--stdio"]
+  },
+  "rootMarker": "composer.json"
+}
