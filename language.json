@@ -1,11 +1,87 @@
 {
   "languageId": "php",
-  "extensions": ["php", "phtml"],
+  "extensions": [
+    "php",
+    "phtml"
+  ],
   "serverId": "intelephense",
   "server": {
     "strategy": "node-module",
     "module": "intelephense",
-    "args": ["--stdio"]
+    "args": [
+      "--stdio"
+    ]
   },
-  "rootMarker": "composer.json"
+  "rootMarker": "composer.json",
+  "initializationOptions": {
+    "storagePath": "${deckData}/intelephense",
+    "files": {
+      "associations": [
+        "*.php",
+        "*.phtml",
+        "*.blade.php"
+      ],
+      "maxSize": 5000000
+    }
+  },
+  "patternTokens": [
+    {
+      "token": "class",
+      "pattern": "\\bnew\\s+\\\\?(?:\\w+\\\\)*(\\w+)"
+    },
+    {
+      "token": "class",
+      "pattern": "\\b([A-Z][a-z]\\w*)\\s*::"
+    },
+    {
+      "token": "class",
+      "pattern": "\\b(?:class|extends|implements|instanceof|trait|interface|enum)\\s+\\\\?(?:\\w+\\\\)*(\\w+)"
+    },
+    {
+      "token": "class",
+      "pattern": "\\b([A-Z]\\w*)\\s+\\$\\w"
+    },
+    {
+      "token": "class",
+      "pattern": "\\bcatch\\s*\\(\\s*\\\\?(?:\\w+\\\\)*(\\w+)"
+    },
+    {
+      "token": "class",
+      "pattern": "(?<!:):\\s*\\??\\\\?(?:\\w+\\\\)*([A-Z][a-z]\\w*)"
+    },
+    {
+      "token": "class",
+      "pattern": "^\\s*use\\s+(?:function\\s+|const\\s+)?\\\\?(?:\\w+\\\\)*(\\w+)"
+    },
+    {
+      "token": "namespace",
+      "pattern": "^\\s*(?:namespace|use)\\s+\\\\?((?:\\w+\\\\)+)"
+    },
+    {
+      "token": "function",
+      "pattern": "\\bfunction\\s+(\\w+)"
+    },
+    {
+      "token": "function",
+      "pattern": "->(\\w+)\\s*\\("
+    },
+    {
+      "token": "function",
+      "pattern": "::(\\w+)\\s*\\("
+    }
+  ],
+  "extraTokenColors": [
+    {
+      "token": "class",
+      "foreground": "4EC9B0"
+    },
+    {
+      "token": "function",
+      "foreground": "DCDCAA"
+    },
+    {
+      "token": "namespace",
+      "foreground": "6b7385"
+    }
+  ]
 }
