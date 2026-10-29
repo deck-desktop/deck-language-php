@@ -1,6 +1,6 @@
 {
   "languageId": "php",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "icon": "Code",
   "color": "#8892bf",
   "extensions": [
@@ -17,7 +17,7 @@
   },
   "rootMarker": "composer.json",
   "initializationOptions": {
-    "storagePath": "${deckData}/intelephense",
+    "storagePath": "${deckData}/cache/intelephense",
     "files": {
       "associations": [
         "*.php",
